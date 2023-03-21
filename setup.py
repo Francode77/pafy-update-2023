@@ -22,7 +22,7 @@ setup(
     author="np1",
     author_email="np1nagev@gmail.com",
     url="https://github.com/Francode77/pafy-update-2023", 
-    install_requires=["yt-dlp","youtube-dl"],
+    install_requires=["youtube-dl"],
     extras_require={
         'youtube-dl-backend': ["youtube-dl"],
         },
