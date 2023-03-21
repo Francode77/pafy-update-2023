@@ -13,16 +13,16 @@ from setuptools import setup
 from pafy import __version__
 
 setup(
-    name='pafy',
-    packages=['pafy'],
+    name='pafy-update-2023',
+    packages=['pafy-update-2023'],
     scripts=['scripts/ytdl'],
     version=__version__,
     description="Retrieve YouTube content and metadata",
     keywords=["pafy", "API", "YouTube", "youtube", "download", "video"],
     author="np1",
     author_email="np1nagev@gmail.com",
-    url="https://github.com/mps-youtube/pafy/",
-    download_url="https://github.com/mps-youtube/pafy/tags",
+    url="https://github.com/Francode77/pafy-update-2023", 
+    install_requires=["yt-dlp"],
     extras_require={
         'youtube-dl-backend': ["youtube-dl"],
         },
