@@ -9,7 +9,8 @@ if sys.version_info[:2] >= (3, 0):
 else:
     uni = unicode
 
-import youtube_dl
+#import youtube_dl
+import yt_dlp as youtube_dl
 
 from . import g
 from .backend_shared import BasePafy, BaseStream, remux, get_status_string, get_size_done
@@ -47,10 +48,15 @@ class YtdlPafy(BasePafy):
         self._title = self._ydl_info['title']
         self._author = self._ydl_info['uploader']
         self._rating = self._ydl_info['average_rating']
-        self._length = self._ydl_info['duration']
+        # Live streams don't have a duration
+        try:
+            self._length = self._ydl_info['duration']
+        except:
+            pass
         self._viewcount = self._ydl_info['view_count']
         self._likes = self._ydl_info.get('like_count', 0)
-        self._dislikes = self._ydl_info.get('dislike_count', 0)
+        # As of November 2021, YT did away with dislike counts
+        #self._dislikes = self._ydl_info.get('dislike_count', 0)
         self._username = self._ydl_info['uploader_id']
         self._category = self._ydl_info['categories'][0] if self._ydl_info['categories'] else ''
         self._bestthumb = self._ydl_info['thumbnails'][0]['url']
