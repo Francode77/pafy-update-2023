@@ -10,7 +10,7 @@ python setup.py sdist bdist_wheel
 """
 
 from setuptools import setup
-from pafy import __version__
+__version__="0.5.5.1"
 
 setup(
     name='pafy-update-2023',
@@ -22,7 +22,7 @@ setup(
     author="np1",
     author_email="np1nagev@gmail.com",
     url="https://github.com/Francode77/pafy-update-2023", 
-    install_requires=["youtube-dl"],
+    install_requires=["yt-dlp","youtube-dl"],
     extras_require={
         'youtube-dl-backend': ["youtube-dl"],
         },
