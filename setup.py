@@ -14,7 +14,7 @@ from pafy import __version__
 
 setup(
     name='pafy-update-2023',
-    packages=['pafy-update-2023'],
+    packages=['pafy'],
     scripts=['scripts/ytdl'],
     version=__version__,
     description="Retrieve YouTube content and metadata",
